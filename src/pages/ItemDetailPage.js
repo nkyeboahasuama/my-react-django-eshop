@@ -5,6 +5,7 @@ import { CartContext } from "../contexts/CartContext";
 import { NotificationsContext } from "../contexts/NotificationsContext";
 import Loader from "../components/Loader";
 import NavBar from "../components/NavBar";
+import { CiNoWaitingSign } from "react-icons/ci";
 
 const ItemDetailPage = () => {
   const { addToCart } = useContext(CartContext);
@@ -27,7 +28,7 @@ const ItemDetailPage = () => {
       setIsAdding(false);
       setQuantity(1);
       // setNotification("");
-    }, 1000);
+    }, 500);
   };
   // console.log(item);
 
@@ -42,7 +43,7 @@ const ItemDetailPage = () => {
   }, [id]);
 
   return (
-    <div className=" bg-amber-100 overflow-hidden w-full h-[100dvh] flex flex-col items-center justify-between">
+    <div className=" bg-amber-100 overflow-hidden w-full h-[100dvh] flex flex-col items-center">
       <NavBar />
       {!item ? (
         <Loader />
@@ -77,7 +78,7 @@ const ItemDetailPage = () => {
           </div>
           <button
             onClick={handleAddToCart}
-            className="font-semibold w-full h-14 mt-1 bg-buttonBrown"
+            className="font-semibold flex items-center justify-center w-full text-center h-14 mt-1 bg-buttonBrown"
           >
             {isAdding ? "Adding..." : "Add To Cart"}
           </button>

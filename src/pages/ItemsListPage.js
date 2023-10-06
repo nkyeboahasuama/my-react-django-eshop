@@ -10,7 +10,7 @@ const ItemsListPage = () => {
 
   console.log(items);
   return (
-    <div className=" w-full h-[100dvh] overflow-y-auto bg-wheat">
+    <div className=" w-full h-[100dvh] overflow-y-auto bg-amber-100">
       <NavBar />
       <div className=" w-full flex justify-center flex-wrap gap-5 py-5">
         {!items.length && <Loader />}

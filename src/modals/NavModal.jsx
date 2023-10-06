@@ -41,7 +41,7 @@ const NavModal = ({ setShowNavModal }) => {
           >
             Eshop
           </NavLink>
-          <div className=" bg-deepBrown rounded-full w-8 p-1 h-8 flex items-center justify-center font-extrabold">
+          <div className=" bg-buttonBrown rounded-full w-8 p-1 h-8 flex items-center justify-center font-extrabold">
             <AiOutlineClose
               onClick={() => setShowNavModal(false)}
               className="text-3xl"
