@@ -10,9 +10,13 @@ const Checkout = () => {
   let token = localStorage.getItem("token");
 
   return (
-    <div className="flex flex-col">
-      <NavBar />
-      <h2 className=" text-[#342a28] text-2xl font-bold py-5">Checkout Form</h2>
+    <div className=" h-[100dvh] overflow-auto">
+      <div className="flex flex-col">
+        <NavBar />
+        <h2 className=" text-[#342a28] text-2xl font-bold py-5">
+          Checkout Form
+        </h2>
+      </div>
 
       <div className="px-5 pb-5 w-full">
         <OrderSummary cartItems={cartItems} totalPrice={totalPrice} />

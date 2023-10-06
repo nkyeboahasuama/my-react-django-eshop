@@ -7,15 +7,15 @@ const CartItem = ({ item }) => {
   const { onRemove, handleIncrease, handleDecrease } = useContext(CartContext);
 
   return (
-    <div className=" bg-[#9b7b43dc] w-full rounded-md my-5">
+    <div className=" bg-cardBrown w-full rounded-md my-5">
       <div className=" flex justify-between items-center  w-full p-2">
-        <div className="flex flex-col justify-between bg-[#342a28] items-center h-full w-20 p-2">
-          <img src={item.product.image} className="w-12" />
+        <Link to={`/item/${item.product.id}`} className="cursor-pointer ">
+          <div className="flex flex-col justify-between  items-center h-full w-20 p-2">
+            <img src={item.product.image} className="w-12 bg-deepBrown p-2" />
 
-          <Link to={`/item/${item.product.id}`} className=" font-bold">
-            <h3 className=" break-words">{item.product.name}</h3>
-          </Link>
-        </div>
+            <h3 className=" break-words font-bold">{item.product.name}</h3>
+          </div>
+        </Link>
 
         <div className="flex flex-col justify-center items-center gap-3">
           <AiFillDelete
@@ -47,7 +47,7 @@ const CartItem = ({ item }) => {
           <p className="">Price: ${item.product.price}</p>
 
           <p className="font-semibold">
-            Total: ${item.quantity * item.product.price}
+            Total: ${(item.quantity * item.product.price).toFixed(2)}
           </p>
         </div>
       </div>

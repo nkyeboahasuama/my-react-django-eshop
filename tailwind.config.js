@@ -8,6 +8,9 @@ module.exports = {
         activeGreen: "#04f674",
 
         mainBrown: "#7c5931",
+        deepBrown: "#342a28",
+        cardBrown: "#9b7e4b",
+        buttonBrown: "#4b380f",
         wheat: "#f5deb3",
       },
     },
