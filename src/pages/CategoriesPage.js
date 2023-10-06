@@ -2,7 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Categories from '../components/Categories';
 
-
 const CategoriesPage = () => {
     let [category, setCategory] = useState([])
     
@@ -19,13 +18,11 @@ const CategoriesPage = () => {
 
   return (
     <div>
-        <div>
-            {category.map((cat, index) => (
-                <Categories key={index} cat={cat} />
-            ))}
-        </div>
+        {category.map((cat, index) => (
+            <Categories key={index} cat={cat} />
+        ))}
     </div>
   )
 }
 
-export default CategoriesPage
+export default CategoriesPage 
