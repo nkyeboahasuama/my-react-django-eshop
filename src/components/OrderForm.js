@@ -101,7 +101,7 @@ const OrderForm = () => {
       <hr />
 
       <button
-        className="bg-[#4b380f] w-full h-12 my-3 font-medium"
+        className="bg-buttonBrown font-semibold w-full h-14 my-3"
         onClick={createOrder}
       >
         Continue with payment

@@ -26,34 +26,36 @@ const Cart = () => {
   };
 
   return (
-    <div className=" bg-wheat h-[100dvh] overflow-y-auto">
+    <div className="  h-[100dvh] overflow-y-auto">
       <NavBar />
-      <h2 className=" text-[#342a28] text-2xl font-bold py-5">Shopping Cart</h2>
+      <h2 className=" text-deepBrown text-2xl font-bold py-5">Shopping Cart</h2>
       {cartItems.length === 0 ? (
-        <p className="black-color">Cart is empty</p>
+        <p className=" text-deepBrown">Cart is empty</p>
       ) : (
         <div>
-          <div className=" px-3">
+          <div className=" px-5">
             {cartItems.map((item) => (
               <CartItem key={item.product.id} item={item} />
             ))}
           </div>
 
-          <div className="">
-            <p className="bg-[#342a28] p-5 my-5 absolute bottom-0">
+          <div className=" w-full px-5">
+            <p className="bg-buttonBrown text-xl p-3 my-5 absolute left-0 bottom-0 font-semibold">
               ${totalPrice}
             </p>
 
             {/*Update this section. Let the Checkout button handle the handleCartUpdate function*/}
 
             <Link to={"/checkout/"}>
-              <button className=" bg-[#342a28] p-3 ">Checkout</button>
+              <button className=" bg-buttonBrown cursor-pointer w-full font-semibold h-14">
+                Checkout
+              </button>
             </Link>
           </div>
 
           <button
             onClick={handleCartUpdate}
-            className="bg-[#342a28] rounded-full text-white p-2 m-5"
+            className="bg-buttonBrown rounded-full text-white p-3 m-10"
           >
             <RxUpdate />
           </button>
