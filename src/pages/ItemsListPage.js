@@ -1,32 +1,19 @@
 import React, { useEffect, useContext } from "react";
 import ItemList from "../components/ItemList";
 import { SearchContext } from "../contexts/SearchContext";
-import { useAuth } from "../contexts/AuthContext";
+// import { useAuth } from "../contexts/AuthContext";
+import Loader from "../components/Loader";
+import NavBar from "../components/NavBar";
 
 const ItemsListPage = () => {
-  const { items, setItems } = useContext(SearchContext);
-  const auth = useAuth();
+  const { items } = useContext(SearchContext);
 
-  useEffect(() => {
-    const getItems = async () => {
-      let response = await fetch("/api/product-list/");
-      let data = await response.json();
-      setItems(data);
-      console.log(data);
-      console.log(auth.user);
-      console.log(response);
-    };
-    getItems();
-  }, []);
-
-  if (!items) {
-    return <p>Loading...</p>;
-  }
-
+  console.log(items);
   return (
-    <div className="items-container">
-      <div className="items-list">
-        {items.length < 1 && "Item not available"}
+    <div className=" w-full h-[100dvh] overflow-y-auto bg-wheat">
+      <NavBar />
+      <div className=" w-full flex justify-center flex-wrap gap-5 py-5">
+        {!items.length && <Loader />}
         {items.map((item, index) => (
           <ItemList key={index} item={item} />
         ))}
