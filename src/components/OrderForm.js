@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../contexts/CartContext";
 
 const OrderForm = () => {
+  const { setCartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
   const createOrder = async () => {
+    setCartItems([]);
     navigate("/success/");
     // try {
     //   const response = await fetch("/api/orders/", {
