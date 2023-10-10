@@ -9,24 +9,27 @@ const CategoriesPage = () => {
   const { items } = useContext(SearchContext);
 
   useEffect(() => {
-    const uniqueCategoriesSet = new Set();
+    if (items && items.length > 0) {
+      const uniqueCategories = items.reduce((accumulator, item) => {
+        const exists = accumulator.some(
+          (uniqueItem) => uniqueItem.category === item.category
+        );
+        if (!exists) {
+          accumulator.push(item);
+        }
 
-    items.forEach((item) => {
-      uniqueCategoriesSet.add({
-        categoryId: item.category,
-        category_name: item.category_name,
-      });
-    });
-    console.log(uniqueCategoriesSet);
-    setCategories(Array.from(uniqueCategoriesSet));
+        return accumulator;
+      }, []);
+      setCategories(uniqueCategories);
+    }
   }, []);
 
   return (
-    <div className=" h-[100vh] overflow-y-auto">
+    <div className=" bg-wheat overflow-y-auto">
       <NavBar />
-      <div className=" flex flex-col justify-center items-center bg-wheat w-full gap-5">
+      <div className=" flex flex-col justify-center items-center w-full gap-5">
         {categories?.map((category, index) => (
-          <Category key={index} category={category.category_name} />
+          <Category key={index} category={category} />
         ))}
       </div>
     </div>
