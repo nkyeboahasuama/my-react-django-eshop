@@ -11,8 +11,6 @@ const NavBar = () => {
   const [showNavModal, setShowNavModal] = useState(false);
   const { cartItems } = useContext(CartContext);
   let cartItemCount = cartItems.length;
-  const navigate = useNavigate();
-  console.log("nav");
 
   const navStyle = ({ isActive }) => {
     return {

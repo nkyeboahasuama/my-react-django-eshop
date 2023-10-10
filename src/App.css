@@ -101,24 +101,14 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: calc(100vh - 100px);
   /* width: 100%; */
 }
 
 .success-content {
   background-color: #050401b1;
-  height: 100%;
-  padding: 0px 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  height: calc(100vh - 100px);
 }
 
-.success-content h1 {
-  padding: 20px;
-}
 /* LOGIN STYLES */
 
 .login {

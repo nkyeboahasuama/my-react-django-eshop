@@ -11,7 +11,6 @@ const SearchContextProvider = (props) => {
       let response = await fetch("/api/product-list/");
       let data = await response.json();
       setItems(data);
-      console.log("sss");
     };
     getItems();
   }, []);
