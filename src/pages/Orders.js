@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Order from "../components/Order";
-import NavBar from "../components/NavBar";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -23,20 +22,17 @@ const Orders = () => {
   }, [token]);
 
   return (
-    <div className=" bg-wheat w-full h-[100dvh]">
-      <NavBar />
-      <div className=" text-black">
-        <h2 className="text-[#342a28] text-2xl font-bold py-5">Orders</h2>
+    <div>
+      <h2 className="black-color">Orders</h2>
 
-        <div>
-          {token
-            ? orders.map((order, index) => (
-                <Order key={index} index={index} order={order} />
-              ))
-            : "Login to make some orders"}
+      <div>
+        {token
+          ? orders.map((order, index) => (
+              <Order key={index} index={index} order={order} />
+            ))
+          : "Login to make some orders"}
 
-          {orders.length < 1 && "No orders to show"}
-        </div>
+        {orders.length < 1 && "No orders to show"}
       </div>
     </div>
   );
