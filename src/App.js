@@ -17,7 +17,6 @@ import NotificationsContextProvider from "./contexts/NotificationsContext";
 import Orders from "./pages/Orders";
 import Home from "./pages/Home";
 import SearchContextProvider from "./contexts/SearchContext";
-import Success from "./pages/Success";
 
 function App() {
   return (
@@ -27,7 +26,7 @@ function App() {
           <SearchContextProvider>
             <AuthContextProvider>
               <CartContextProvider>
-                {/* <NavBar /> */}
+                <NavBar />
                 <Routes>
                   <Route path="/" exact element={<Home />} />
 
@@ -51,7 +50,6 @@ function App() {
                   <Route path="/signup/" element={<SignUp />} />
 
                   <Route path="/orders/" element={<Orders />} />
-                  <Route path="/success/" element={<Success />} />
                 </Routes>
               </CartContextProvider>
             </AuthContextProvider>
