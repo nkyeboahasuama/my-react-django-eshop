@@ -38,7 +38,7 @@ const Login = () => {
       console.error(error);
     }
   };
-  console.log("l");
+
   return (
     <div className="login">
       {token ? (
